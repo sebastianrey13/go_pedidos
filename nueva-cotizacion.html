@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/nueva-cotizacion.css">
+    <script type="text/javascript" src="/js/nueva-cotizacion.js"></script>
+    <title>GoPedidos</title>
+</head>
+<body>
+    <div class="contenido">
+    <header>
+        <div class="encabezado">
+            <a href="/index.html"><img src="/img/regresar_30.png" alt="volver atras"></a>
+            <h2>Nueva cotización</h2>
+            <img src="/img/icons8-guardar-50.png" alt="guardar">
+        </div>
+    </header>
+
+    <main>
+        <div class="main">
+            <div>
+                <form id="nuevaCotizacion">
+                    <div>   
+                        <label for="tercero">Tercero:<span class="asterisco">*</span></label>
+                        <input type="tercero" id="tercero" placeholder="" required disabled></input>
+                        <img class="imgBuscarTercero" src="/img/icons8-lupa-ios-16-32.png" alt="">
+                    </div>
+
+                    <div>
+                        <label for="fechaNuevaCotizacion">Fecha actual:</label>
+                        <input type="date" id="fechaNuevaCotizacion" name="fechaNuevaCotizacion" value="" disabled>
+                    </div>
+
+                    <div>
+                        <label for="Email">Email:<span class="asterisco">*</span></label>
+                        <input type="email" id="email" placeholder="Ingrese su email" required></input>
+                    </div>
+
+                    <div>
+                        <label for="formaDePago">Forma de pago:<span class="asterisco">*</span></label>
+                        <select name="formaDePago" id="formaDePago">
+                            <option value="">Seleccione</option>
+                            <option value="">Efectivo</option>
+                            <option value="">credito 15 dias</option>
+                            <option value="">credito 30 dias</option>
+                            <option value="">Pago en linea PSE</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="listaDePrecios">Lista de precios:<span class="asterisco">*</span></label>
+                        <select name="listaDePrecios" id="listaDePrecios">
+                            <option value="">Seleccione</option>
+                            <option value="">Lista de precios - Medellin</option>
+                            <option value="">Lista de precios - Bogota</option>
+                            <option value="">Lista de precios - Cali</option>
+                            <option value="">Lista de precios - Bucaramanga</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="tipoDePedido">Tipo de pedido:</label>
+                        <select name="tipoDePedido" id="tipoDePedido">
+                            <option value="">Seleccione</option>
+                            <option value="">Factura</option>
+                            <option value="">Remision</option>
+                        </select>
+                    </div>
+
+                    <div class="añadirProductos">
+                        <img src="/img/icons8-caja-64.png" alt="">
+                        <p class="button">Añadir producto</p>
+                    </div>
+
+                    <div>
+                        <label for="observaciones">Observaciones:</label>
+                        <p class="pObservaciones"></p>
+                        <!-- <textarea name="" id="" cols="30" rows="10"></textarea> -->
+                    </div>
+
+                    <div>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus nesciunt, tenetur, laboriosam possimus quam corrupti similique repellat facilis inventore perspiciatis cum? Corrupti quidem, unde officiis explicabo possimus obcaecati ipsam repellendus!
+                        Quas nesciunt, suscipit ipsa maxime sed quis, autem sint eveniet commodi minima sunt at tenetur recusandae. Perferendis dolor, accusamus sint suscipit eos sapiente impedit at! Rem voluptate maiores laudantium facilis.
+                        Repellendus maiores doloremque, deleniti quia magni atque reprehenderit porro nobis id iure dolorum excepturi, nihil quae accusantium error laborum veniam optio fugiat, autem iste voluptas! Labore nihil incidunt possimus. Delectus?
+                        Id laboriosam ex, nisi repudiandae inventore minima alias, eius beatae atque quas nihil iure aliquam voluptas accusantium? Perspiciatis nulla dicta mollitia quis quam culpa consequatur, harum atque ullam eum a?
+                        Quod nostrum at nemo doloribus? Quia quam, hic, dolore nesciunt maxime aut molestiae vero quisquam nobis, aliquid commodi deserunt dolorum atque cupiditate? Repellat recusandae deserunt veniam ratione? Doloribus, rem? Quam.
+                        Nostrum provident aperiam earum! Dolor, hic quaerat, repellendus vel culpa, magnam officiis dolorem vitae incidunt consequuntur atque accusamus blanditiis architecto soluta aperiam tenetur quae illo. Consequuntur tempora corrupti dignissimos amet!
+                        Quae a nobis officia sunt explicabo voluptas eveniet corporis quisquam deleniti labore autem voluptatum possimus fugit porro eum nostrum, quia, mollitia consectetur cumque eaque, quod necessitatibus repellendus. Impedit, tenetur? Iste.
+                        Nostrum fuga consectetur culpa mollitia tenetur blanditiis atque, error nisi natus perspiciatis possimus distinctio ad hic deserunt sequi, odit veritatis, totam velit facere exercitationem maxime architecto. Id cumque eum autem?
+                        Officiis, ipsa! Eaque ex cupiditate dicta voluptatibus ea quia illum velit veniam similique recusandae! Quibusdam et consequuntur, aliquam vel libero harum quia in minus accusantium pariatur a veniam assumenda repellendus!
+                        Tempore fugit ipsa dolorem quam vero alias fugiat provident, tenetur molestias temporibus recusandae vitae necessitatibus tempora cupiditate cum voluptatem quo sint numquam maiores officiis reprehenderit nisi iste corporis pariatur! Beatae!
+                    </div>
+
+                </form>
+            </div>
+            
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer">
+            <img class="menu" src="/img/menu_60.png" alt="menu">
+        </div>
+    </footer>
+    </div>
+</body>
+</html>
