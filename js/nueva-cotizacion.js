@@ -34,8 +34,9 @@ let terceros =
     <header>
         <div class="encabezado">
             <img id="imgRegresar" src="/img/regresar_30.png" alt="volver atras">
-            <h2>Terceros</h2>
-            <img src="/img/icons8-lupa-30.png" alt="buscarPor">
+            <h2 id="h2Terceros">Terceros</h2>
+            <input class="oculto" id="inputTerceros" type="inputTerceros" placeholder="Ingrese el NIT o Nombre">
+            <img id="filtrarTercero" src="/img/icons8-lupa-30.png" alt="buscarPor">
         </div>
     </header>
 
@@ -79,7 +80,6 @@ imgRegresar.addEventListener("click", function(){
 })
 
 // const tercero = document.querySelector("#tercero");
-const tercero = document.querySelector("#tercero");
 
 // Obtener todos los elementos con clase "imageCheck"
 const imageCheckElements = document.querySelectorAll(".imageCheck");
@@ -98,6 +98,49 @@ imageCheckElements.forEach((element, index) => {
         tercero.value = pRazonSocialValue;
     });
 });
+
+//////////////////////////////// Filtrar Terceros ////////////////////////////
+
+const filtrarTercero = document.querySelector("#filtrarTercero");
+
+filtrarTercero.addEventListener("click" , function(){
+
+    const h2Terceros = document.querySelector("#h2Terceros");
+    const inputTerceros = document.querySelector("#inputTerceros");
+    h2Terceros.classList.add("oculto");
+    inputTerceros.classList.remove("oculto");
+
+    ////////////// filtramos //////////////////////////
+
+    const elementos = document.querySelectorAll(".cotizacion div");
+
+    function filtrarElementos() {
+        const textoBusqueda = inputTerceros.value.toLowerCase();
+    
+        elementos.forEach(elemento => {
+            const textoElemento = elemento.textContent.toLowerCase();
+            if (textoElemento.includes(textoBusqueda)) {
+                elemento.style.display = "grid"; // Mostrar el elemento si coincide con el texto de búsqueda
+            } else {
+                elemento.style.display = "none"; // Ocultar el elemento si no coincide con el texto de búsqueda
+            }
+        });
+    }
+    
+    inputTerceros.addEventListener("input", filtrarElementos);
+
+
+    
+
+
+
+});
+
+///////////////////////////////////////////////////////////////////////////////////
+
+
+
+
     
 });
 

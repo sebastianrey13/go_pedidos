@@ -156,6 +156,23 @@ select option {
     color: #b1b1b1;
 }
 
+/*.inputTerceros{
+    border: 0;
+    padding-top: 5px;
+    align-items: center;
+
+
+}*/
+
+input[type="inputTerceros"] {
+    width: 75%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    background-color: #61DD65;
+}
+
 /* footer */
 
 .footer{
