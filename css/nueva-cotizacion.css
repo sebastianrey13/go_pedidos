@@ -14,12 +14,12 @@
 }    
 /* header */
 body{
-    max-width: 412px;
-    max-height: 915px;
+    /* max-width: 412px;
+    max-height: 915px; */
   }
 .encabezado{
     position: fixed;
-    width: 412px;
+    width: 100%;
     height: 65px;
     display: flex;
     flex-direction: row;
@@ -34,11 +34,7 @@ body{
 
 .main{
     padding-top: 65px;
-
-}
-
-.cotizaciones{
-    padding-top: 70px;
+    padding-bottom: 65px;
 }
 
 form {
@@ -125,6 +121,41 @@ select option {
     text-align: center;
   }
 
+/* Teceros */
+
+.nueva_cotizacion{
+    position: fixed;
+    bottom: 85px;
+    right: 20px;
+}
+
+.contenedorCotizacines{
+    padding-top: 65px;
+}
+
+.seleccionTercero{
+    padding: 15px;
+    display: grid;
+    grid-template-columns: 15% 65% 20%;
+    grid-template-rows: 1fr 1fr;
+    border-bottom: solid #61DD65 1px;
+}
+
+.imageAvatar{
+    grid-column: 1/2;
+    grid-row: 1/3;
+}
+
+.imageCheck{
+    grid-column: 3/4;
+    grid-row: 1/3;
+    padding-top: 9px;
+}
+
+.pNit{
+    color: #b1b1b1;
+}
+
 /* footer */
 
 .footer{
@@ -133,11 +164,15 @@ select option {
     flex-direction: row;
     align-items: center;
     justify-content:center;
-    width: 412px;
+    width: 100%;
     height: 65px;
     bottom: 0px;
     background-color: #f3f3f3;
     /* padding-right: 20px; */
+}
+
+.oculto{
+    display: none;
 }
 
 }

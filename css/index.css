@@ -14,12 +14,12 @@
 }    
 /* header */
 body{
-    max-width: 412px;
-    max-height: 915px;
-  }
+    /* max-width: 412px;
+    max-height: 915px; */}
+    
 .encabezado{
     position: fixed;
-    width: 412px;
+    width: 100%;
     height: 65px;
     display: flex;
     flex-direction: row;
@@ -31,15 +31,18 @@ body{
 }
 .nueva_cotizacion{
     position: fixed;
-    /* padding-left: 350px;
-    padding-top: 750px; */
     bottom: 85px;
     right: 20px;
 }
 
 .cotizaciones{
     padding-top: 70px;
+    padding-bottom: 70px;
 }
+
+
+
+
 
 
 /* footer */
@@ -50,11 +53,10 @@ body{
     flex-direction: row;
     align-items: center;
     justify-content:center;
-    width: 412px;
+    width: 100%;
     height: 65px;
     bottom: 0px;
     background-color: #f3f3f3;
-    /* padding-right: 20px; */
 }
 
 }
