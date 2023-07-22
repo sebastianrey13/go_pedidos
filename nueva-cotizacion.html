@@ -63,21 +63,33 @@
                         <label for="tipoDePedido">Tipo de pedido:</label>
                         <select name="tipoDePedido" id="tipoDePedido">
                             <option value="">Seleccione</option>
-                            <option value="">Factura</option>
-                            <option value="">Remision</option>
+                            <option value="Factura">Factura</option>
+                            <option value="Remision">Remision</option>
                         </select>
                     </div>
-
+                    
                     <div class="añadirProductos">
                         <img src="/img/icons8-caja-64.png" alt="">
                         <p id="añadirProducto" class="button">Añadir producto</p>
                     </div>
 
+                    <table class="oculto" id="tablaProducto">
+                        <thead>
+                            <tr>
+                                <th>Atributo</th>
+                                <th>Valor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Aquí se generarán las filas dinámicamente -->
+                        </tbody>
+                    </table>
+
                     <div>
                         <label for="observaciones">Observaciones:</label>
                         <p class="pObservaciones"></p>
-                        <!-- <textarea name="" id="" cols="30" rows="10"></textarea> -->
                     </div>
+
 
                     <div class="valores">
                         <p>Sub Total</p>

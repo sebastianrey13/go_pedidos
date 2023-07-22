@@ -6,16 +6,22 @@
     box-sizing: border-box;
 
 }
+@media (min-width:415px){
+    .contenido{
+        display: none;
+    }
 
-@media (max-width:412px){
+    .oculto{
+        display: flex;
+    }
+    
+    .aviso{
+        margin: 100px;
+        text-align: center;
+    }
+}
 
-.contenido{
-    /* justify-content: space-between; */
-}    
-/* header */
-body{
-    /* max-width: 412px;
-    max-height: 915px; */}
+@media (max-width:414px){
     
 .encabezado{
     position: fixed;
@@ -54,6 +60,10 @@ body{
     height: 65px;
     bottom: 0px;
     background-color: #f3f3f3;
+}
+
+.oculto{
+    display: none;
 }
 
 }

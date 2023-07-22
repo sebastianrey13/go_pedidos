@@ -7,6 +7,13 @@
 
 }
 
+@media (min-width:415px){
+    body{
+        display: none;
+        
+    }
+}
+
 @media (max-width:414px){
 
 .contenido{
@@ -183,7 +190,7 @@ input:focus {
     outline: none; /* Quitamos el borde por defecto que aparece en algunos navegadores */
     border: 0px solid #8add8c; 
     box-shadow: 0 0 5px #8add8c; 
-  }
+}
 
 
 /* -------------------------------------    Productos   -------------------------------------- */
@@ -207,6 +214,34 @@ input:focus {
 
 .productos_nombre{
     margin: 10px;
+}
+
+.observacionesProducto{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    align-items: center;
+}
+
+.observacionesProducto p{
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.observacionesProducto textarea{
+    background-color: #f2fdf2e0;
+    padding: 10px;
+    border: 1px solid #8add8c;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+#textareaObservacionesProducto:focus {
+    border-radius: 10px;
+    border: 1px solid #61dd65;
+    box-shadow: 0 0 5px #5fd67d;
+    
+
 }
 
 .slider{
@@ -382,6 +417,29 @@ input[type="precio"] {
     color: #000000;
 }
 
+/* -------------------Tabla --------------------------- */
+
+#tablaProducto {
+    border-collapse: collapse; /* Combina los bordes de las celdas */
+    width: 100%;
+    margin: 20px 0px;
+}
+
+#tablaProducto th,
+#tablaProducto td {
+    border: 1px solid #ccc; /* Agrega bordes a las celdas */
+    padding: 8px; /* Espacio interno para el contenido de las celdas */
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+
+#tablaProducto th {
+    background-color: #ebffe3; /* Agrega un fondo de color a las celdas del encabezado */
+    text-align: center;
+}
+
+#tablaProducto tbody tr:nth-child(odd) {
+    background-color: #f9f9f9; /* Color de fondo para las filas impares */
+}
 
 /* -------------------------------------      footer     -------------------------------------- */
 
