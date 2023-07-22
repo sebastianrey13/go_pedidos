@@ -70,7 +70,7 @@
 
                     <div class="añadirProductos">
                         <img src="/img/icons8-caja-64.png" alt="">
-                        <p class="button">Añadir producto</p>
+                        <p id="añadirProducto" class="button">Añadir producto</p>
                     </div>
 
                     <div>
@@ -79,12 +79,13 @@
                         <!-- <textarea name="" id="" cols="30" rows="10"></textarea> -->
                     </div>
 
-                    <div>
+                    <div class="valores">
                         <p>Sub Total</p>
+                        <p>$<span>0</span></p>
                         <p>Total Descuento</p>
-                        <p>Total Pagar</p>
-
-
+                        <p>$<span>0</span></p>
+                        <p class="totalAPagar">Total Pagar</p>
+                        <p class="totalAPagar">$<span>0</span></p>
                     </div>
 
                 </form>
@@ -99,10 +100,13 @@
     </footer>
     </div>
 
-    <div id="añadirTerceros">
+    <div class="oculto" id="añadirTerceros">  
+    </div>
 
+    <div class="oculto" id="añadirProductos">  
+    </div>
 
-        
+    <div  class="oculto" id="detalleProductos">  
     </div>
 
     

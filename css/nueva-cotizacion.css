@@ -7,7 +7,7 @@
 
 }
 
-@media (max-width:412px){
+@media (max-width:414px){
 
 .contenido{
     /* justify-content: space-between; */
@@ -30,7 +30,7 @@ body{
     padding-right: 20px;
 }
 
-/* Main */
+/* -------------------------------------    Form   -------------------------------------- */
 
 .main{
     padding-top: 65px;
@@ -40,7 +40,7 @@ body{
 form {
     padding: 20px;
     border-radius: 10px;
-    background-color: #f9f9f9;
+    background-color: #ffffff;
 }
 
 .asterisco{
@@ -119,9 +119,14 @@ select option {
     cursor: pointer;
     width: 150px;
     text-align: center;
-  }
+}
 
-/* Teceros */
+.buttonAñadir{
+    margin-top: 20px;
+    margin-bottom: 70px;
+}
+
+/* -------------------------------------    Terceros   -------------------------------------- */
 
 .nueva_cotizacion{
     position: fixed;
@@ -129,16 +134,18 @@ select option {
     right: 20px;
 }
 
-.contenedorCotizacines{
+.contenedor{
     padding-top: 65px;
 }
 
-.seleccionTercero{
+.seleccion{
     padding: 15px;
     display: grid;
-    grid-template-columns: 15% 65% 20%;
+    grid-template-columns: 25% 60% 10%;
     grid-template-rows: 1fr 1fr;
     border-bottom: solid #61DD65 1px;
+    justify-content: center;
+    align-items: center;
 }
 
 .imageAvatar{
@@ -152,17 +159,15 @@ select option {
     padding-top: 9px;
 }
 
+.imageCar{
+    grid-column: 3/4;
+    grid-row: 1/3;
+    padding-top: 9px;
+}
+
 .pNit{
     color: #b1b1b1;
 }
-
-/*.inputTerceros{
-    border: 0;
-    padding-top: 5px;
-    align-items: center;
-
-
-}*/
 
 input[type="inputTerceros"] {
     width: 75%;
@@ -170,10 +175,215 @@ input[type="inputTerceros"] {
     border: none;
     border-radius: 5px;
     font-size: 20px;
+    background-color: #8add8c;
+    border-radius: 10px;
+}
+
+input:focus {
+    outline: none; /* Quitamos el borde por defecto que aparece en algunos navegadores */
+    border: 0px solid #8add8c; 
+    box-shadow: 0 0 5px #8add8c; 
+  }
+
+
+/* -------------------------------------    Productos   -------------------------------------- */
+
+.encabezadoNombreProductos{
+    justify-content: center
+}
+
+.encabezadoNombreProductos img{
+    position: absolute;
+    left: 20px;
+}
+
+.productos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    margin-top: 30px;
+}
+
+.productos_nombre{
+    margin: 10px;
+}
+
+.slider{
+    width: 300px;
+    /* height: 450px; */
+    /* position: relative; */
+    /* display: flex; */
+    /* overflow: scroll; */
+    /* scroll-snap-type: x mandatory; */
+}
+
+.slider img{
+    /* width: 100%; */
+    /* left: 0; */
+    /* position: sticky; */
+    /* object-fit: cover; */
+    border-radius: 5px;
+    /* scroll-snap-align: center; */
+}
+
+.sliderBoton{
+    margin-top: -30px;
+}
+
+.sliderBoton ul{
+    display: flex;
+}
+
+input[type="inputProductos"] {
+    width: 75%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #8add8c;
+    border-radius: 10px;
+}
+
+/*////////////////////////   Botones de prev y next  ////////////////////////*/
+
+/* .slider_previus{
+    background-color: #61DD65;
+    border-radius: 50%;
+} */
+
+/* .slider div{
+    border-radius: 100%;
+    width: 25px;
+    height: 25px;
+    background-color: #61DD65;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider_previus{
+    position: relative;
+    top: -200px;
+    left: -15px;
+} */
+
+.adelante{
+    position: relative;
+    top: -165px;
+    left: 285px;
+}
+
+.atras{
+    position: relative;
+    top: -165px;
+    left: -50px;
+}
+
+/* ---------------------- */
+
+.boton{
+    width: 10px;
+    height: 10px;
+    border: 2px solid #61DD65;
+    border-radius: 100%;
+    margin: 2px;
+}
+
+.botonRelleno{
     background-color: #61DD65;
 }
 
-/* footer */
+.colorProducto{
+    width: 200px;
+    font-weight: bold;
+}
+
+/* ----------------------- Precio -------------------*/
+
+/* .details__prices {
+    width: 300px;
+    gap: 5px;
+    justify-content: center;
+    margin-bottom: 20px;
+    align-items: end;
+} */
+
+.precios{
+    display: flex;
+    justify-content: space-around;
+}
+
+.precioConDescuento{
+    font-size: 1.7em;
+    font-weight: 700;
+    text-align: center;
+}
+
+.descuento {
+    font-size: 15px;
+    background-color: #c8ffc8;
+    color: #61DD65;
+    align-items: end;
+}
+
+.precioNeto {
+    font-weight: 700;
+    color: #bbbbbb;
+    text-decoration: line-through;
+}
+
+.cantidad{
+    margin: 20px 0px;
+    width: 150px;
+    display: flex;
+    align-items: center ;
+    justify-content: space-between;
+
+}
+
+input[type="precio"] {
+    width: 50%;
+    padding: 5px;
+    /* margin-bottom: 15px; */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.mas_menos{
+    width: 20px;
+    height: 20px;
+    border: solid 1px #61DD65;
+    border-radius: 100%;
+}
+
+/* -------------------------------------    Valor a pagar   ----------------------------------- */
+
+
+.valores{
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 10px;
+    padding: 10px
+}
+
+.valores p{
+    font-size: 16px; 
+    color: #bbbbbb;
+    border-bottom: 1px solid #61DD65;
+    padding-bottom: 5px; 
+}
+
+.valores .totalAPagar{
+    font-size: 20px;
+    font-weight: bold;
+    color: #000000;
+}
+
+
+/* -------------------------------------      footer     -------------------------------------- */
 
 .footer{
     position: fixed;
