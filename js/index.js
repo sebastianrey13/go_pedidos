@@ -116,9 +116,6 @@ imgDesplegarList.forEach((imgDesplegar, index) => {
 });
 
 
-
-
-
 //////////////////////////////////// OPCION EXPORTAR A PDF ////////////////////
 
 // Función para exportar el contenido de la tabla seleccionada a un PDF
@@ -156,8 +153,23 @@ opcionesEditar.forEach((opcion, indice) => {
     
     //////////////////////////////////////////////////////////////
 
+////////////////////////////////// MENU APP ////////////////////
 
+const menuCotizaciones = document.querySelector("#menuCotizaciones");
+const menuFooter = document.querySelector(".menuFooter");
 
+menuCotizaciones.addEventListener("click", function(){
+    menuFooter.classList.toggle("oculto");
+})
+
+document.addEventListener("click", function (event) {
+    const target = event.target;
+
+    if (!menuFooter.contains(target) && target !== menuCotizaciones) {
+        menuFooter.classList.add("oculto");
+    }
+    
+});
 
 })
 

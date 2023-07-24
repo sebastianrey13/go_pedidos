@@ -130,12 +130,12 @@
     cursor: pointer;
   }
   
-  .menuOpciones p {
+.menuOpciones p {
     cursor: pointer;
     text-align: start;
     font-size: 15px;
     margin-bottom: 10px;
-  }
+}
 
 
 /* footer */
@@ -151,6 +151,25 @@
     bottom: 0px;
     background-color: #f3f3f3;
 }
+
+.menuFooter {
+    /* display: none; */
+    position: absolute;
+    background-color: #f3f3f3;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px;
+    margin-bottom: 118px;
+    cursor: pointer;
+  }
+  
+.menuFooter p {
+    cursor: pointer;
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
 
 .oculto{
     display: none;
