@@ -740,12 +740,11 @@ sessionStorage.setItem("productosArray", productosArrayJSON);
 
 console.log(productosArray);
 
-    
+location.replace("/index.html");
 }
 
-location.replace("/index.html");
 
-    }
+}
    
 })
 
