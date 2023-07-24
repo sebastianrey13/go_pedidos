@@ -129,18 +129,6 @@ opcionesEditar.forEach((opcion, indice) => {
 });
 
     
-    ////////////////////////////////////////////
-
-
-    const botonAñadirNuevaCotizacion = document.querySelector("#botonAñadirNuevaCotizacion");
-    
-    botonAñadirNuevaCotizacion.addEventListener("click",function(){
-
-        location.replace("/nueva-cotizacion.html");
-        
-    });
-
-
     //////////////////////////////////////////////////////////////
 
 
