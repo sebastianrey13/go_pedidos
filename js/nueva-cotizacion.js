@@ -524,8 +524,6 @@ añadirProducto.addEventListener("click",function(){
     
     const funcionAñadir = document.querySelector("#funcionAñadir");
     
-    let productoAñadido = {};
-    
     funcionAñadir.addEventListener("click", function(){
     
         // Obtener el tbody de la tabla
@@ -695,15 +693,62 @@ if (!validacion1) {
 
 if(!validacion2){
     ///// Aca se toma el objeto y se realiza el pedido //////////////////
-    console.log(productoAñadidoCompleto)
-}
     
+    // Paso 1: Obtén el array actual del sessionStorage (si existe) o crea uno nuevo
+let productosArray = JSON.parse(sessionStorage.getItem("productosArray")) || [];
 
+// Paso 2: Crea un nuevo objeto que deseas agregar al array
 
+productoAñadidoCompleto.tercero = tercero.value;
+productoAñadidoCompleto.email = email.value;
+productoAñadidoCompleto.formaDePago = formaDePago.value;
+productoAñadidoCompleto.listaDePrecios = listaDePrecios.value;
+productoAñadidoCompleto.tipoDePedido = tipoDePedido.value;
+
+// console.log(productoAñadidoCompleto);
+
+// Paso 3: Agrega el nuevo objeto al array
+productosArray.push(productoAñadidoCompleto);
+
+// Paso 4: Convierte el array en una cadena de texto JSON
+const productosArrayJSON = JSON.stringify(productosArray);
+
+// Paso 5: Guarda el array actualizado en el sessionStorage
+sessionStorage.setItem("productosArray", productosArrayJSON);
+
+console.log(productosArray);
+
+    
+}
+
+location.replace("/index.html");
+    
 })
 
 ////////////////////////////////// Fin Guardar cotizacion /////////////////////////
 
 
+//////////////////////////////////////////////
   
 })
+
+
+
+// {
+//     "nombre": "CP-89 PANTALONES",
+//     "valor unitario": 95000,
+//     "cantidad": 4,
+//     "descuento": 76000,
+//     "Tipo de pedido": "Remision",
+//     "Totales": 304000,
+//     "Color": "Marron",
+//     "Observaciones": "asgdagagasfgdsaf",
+//     "Fecha Entrega": "2023-07-13",
+//     "tercero": "EPM",
+//     "email": "sebastianrey1@hotmail.com",
+//     "formaDePago": "Credito 15 dias",
+//     "listaDePrecios": "Lista de precios - Cali",
+//     "tipoDePedido": "Remision"
+// }
+
+
