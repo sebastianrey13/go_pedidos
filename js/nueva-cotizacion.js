@@ -339,7 +339,7 @@ añadirProducto.addEventListener("click",function(){
             </div>
     
             <div>
-                <label for="fechaEntrega">Fecha actual:</label>
+                <label for="fechaEntrega">Fecha de entrega:</label>
                 <input type="date" id="fechaEntrega" name="fechaEntrega" value="">
             </div>
     
@@ -525,6 +525,8 @@ añadirProducto.addEventListener("click",function(){
     const funcionAñadir = document.querySelector("#funcionAñadir");
     
     funcionAñadir.addEventListener("click", function(){
+
+        
     
         // Obtener el tbody de la tabla
         const tablaProducto = document.querySelector("#tablaProducto");
@@ -541,8 +543,12 @@ añadirProducto.addEventListener("click",function(){
         const observaciones = document.querySelector("#textareaObservacionesProducto").value;
         const fechaEntrega = document.querySelector("#fechaEntrega").value;
         const pObservaciones = document.querySelector(".pObservaciones");
-        
-        const valorSubTotal = precioNeto*userInputNumber;
+
+        if(fechaEntrega === ""){
+            alert("Escoja una fecha de entrega");
+        }else{
+
+            const valorSubTotal = precioNeto*userInputNumber;
         const descuentoTotal = valorSubTotal*porcetajeDescuento;
         const PrecioTotal = valorSubTotal-descuentoTotal;
     
@@ -557,6 +563,7 @@ añadirProducto.addEventListener("click",function(){
         }
     
         productoAñadidoCompleto = {
+            "Fecha de cotizacion" : "",
             "nombre" : document.querySelector(".h2NombreProducto").textContent,
             "valor unitario" : precioNeto,
             "cantidad" : userInputNumber,
@@ -565,7 +572,7 @@ añadirProducto.addEventListener("click",function(){
             "Totales" : PrecioTotal,
             "Color" : productoSeleccionado.color[seleccionColor - 1],
             "Observaciones" : observaciones,
-            "Fecha Entrega" : fechaEntrega,
+            "Fecha de Entrega" : fechaEntrega,
         }
     
         pObservaciones.innerHTML = observaciones;
@@ -604,7 +611,10 @@ añadirProducto.addEventListener("click",function(){
     paginaNuevaCotizacion.classList.remove("oculto");
     añadirProductos.classList.add("oculto");
     detalleProductos.classList.add("oculto");
-    
+
+    }
+        
+        
     });
 
     /////////////////  OPCIONES TABLA   ////////////////
@@ -657,8 +667,17 @@ añadirProducto.addEventListener("click",function(){
 
 const imgGuardarEncabezado = document.querySelector("#imgGuardarEncabezado");
 
+
+
 imgGuardarEncabezado.addEventListener("click" , function(){
-    const tercero = document.querySelector("#tercero");
+
+
+    let confirmacion = confirm("¿Estás seguro de realizar el pedido, una vez guardado no se puede modificar?");
+
+    if(confirmacion){
+
+        const tercero = document.querySelector("#tercero");
+    const fechaNuevaCotizacion = document.querySelector("#fechaNuevaCotizacion");
     const email = document.querySelector("#email");
     const formaDePago = document.querySelector("#formaDePago");
     const listaDePrecios = document.querySelector("#listaDePrecios");
@@ -692,6 +711,8 @@ if (!validacion1) {
 }
 
 if(!validacion2){
+
+
     ///// Aca se toma el objeto y se realiza el pedido //////////////////
     
     // Paso 1: Obtén el array actual del sessionStorage (si existe) o crea uno nuevo
@@ -700,6 +721,7 @@ let productosArray = JSON.parse(sessionStorage.getItem("productosArray")) || [];
 // Paso 2: Crea un nuevo objeto que deseas agregar al array
 
 productoAñadidoCompleto.tercero = tercero.value;
+productoAñadidoCompleto["Fecha de cotizacion"] = fechaNuevaCotizacion.value;
 productoAñadidoCompleto.email = email.value;
 productoAñadidoCompleto.formaDePago = formaDePago.value;
 productoAñadidoCompleto.listaDePrecios = listaDePrecios.value;
@@ -722,7 +744,9 @@ console.log(productosArray);
 }
 
 location.replace("/index.html");
-    
+
+    }
+   
 })
 
 ////////////////////////////////// Fin Guardar cotizacion /////////////////////////

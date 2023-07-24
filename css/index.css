@@ -91,6 +91,25 @@
     height: 18px;
 }
 
+.columna1{
+    width: 40%;
+}
+
+.columna2{
+    width: 60%;
+}
+
+.imgDesplegar{
+    position: absolute;
+    justify-self: start;
+    cursor: pointer;
+    margin-left: -5px;
+}
+
+.imgDesplegar.rotar {
+    transform: rotate(90deg);
+  }
+
 .imgPuntos{
     position: absolute;
     justify-self: end;

@@ -17,8 +17,13 @@ function crearTabla(objeto, index) {
       `<table class="tablaProducto" id="tablaProducto">
           <thead>
               <tr>
-                  <th>Pedido ${index + 1}</th>
-                  <th>
+                <th class="columna1">
+                    <div class="thValor">
+                        <p>Pedido ${index + 1}</p>
+                        <img class="imgDesplegar" src="/img/icons8-adelante-20.png" alt="">
+                    </div>
+                </th>
+                  <th class="columna2">
                       <div class="thValor">
                           <p class="celdaValor">Ref-${numeroAleatorio}</p>
                           <img class="imgPuntos" src="/img/icons8-puntos-25.png" alt="">
@@ -32,7 +37,7 @@ function crearTabla(objeto, index) {
                   </th>
               </tr>
           </thead>
-          <tbody>
+          <tbody class="oculto filasTablaCotizaciones">
           <!-- Aquí se generarán las filas dinámicamente -->
           </tbody>
       </table>`;
@@ -92,6 +97,26 @@ document.addEventListener("click", function (event) {
         }
     }
 });
+
+
+//////////////////////// Minimar - Mostrar tabla ////////////////////////
+
+const filasTablaCotizacionesList = document.querySelectorAll(".filasTablaCotizaciones");
+const imgDesplegarList = document.querySelectorAll(".imgDesplegar");
+
+
+imgDesplegarList.forEach((imgDesplegar, index) => {
+    imgDesplegar.addEventListener("click", function() {
+        // Alternar la clase "oculto" para el correspondiente elemento "filasTablaCotizaciones"
+        filasTablaCotizacionesList[index].classList.toggle("oculto");
+
+        // Para dar animacion a la imagen
+        imgDesplegar.classList.toggle("rotar");
+    });
+});
+
+
+
 
 
 //////////////////////////////////// OPCION EXPORTAR A PDF ////////////////////
