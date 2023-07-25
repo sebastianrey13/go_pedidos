@@ -546,8 +546,9 @@ añadirProducto.addEventListener("click",function(){
 
         if(fechaEntrega === ""){
             alert("Escoja una fecha de entrega");
+        }else if(observaciones === ""){
+            alert("Deje una observación")
         }else{
-
             const valorSubTotal = precioNeto*userInputNumber;
         const descuentoTotal = valorSubTotal*porcetajeDescuento;
         const PrecioTotal = valorSubTotal-descuentoTotal;
@@ -644,7 +645,7 @@ añadirProducto.addEventListener("click",function(){
         detalleProductos.classList.remove("oculto");
     })
     
-    /////////////////// OPCION ELIMINAR ////////////////////////
+    /////////////////// OPCION ELIMINAR "NO FUNCIONA :C" ////////////////////////
     
     // const menuOpcionesEliminar = document.querySelector("#menuOpcionesEliminar");
 
@@ -754,24 +755,3 @@ location.replace("/index.html");
 //////////////////////////////////////////////
   
 })
-
-
-
-// {
-//     "nombre": "CP-89 PANTALONES",
-//     "valor unitario": 95000,
-//     "cantidad": 4,
-//     "descuento": 76000,
-//     "Tipo de pedido": "Remision",
-//     "Totales": 304000,
-//     "Color": "Marron",
-//     "Observaciones": "asgdagagasfgdsaf",
-//     "Fecha Entrega": "2023-07-13",
-//     "tercero": "EPM",
-//     "email": "sebastianrey1@hotmail.com",
-//     "formaDePago": "Credito 15 dias",
-//     "listaDePrecios": "Lista de precios - Cali",
-//     "tipoDePedido": "Remision"
-// }
-
-

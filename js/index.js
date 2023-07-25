@@ -13,16 +13,9 @@ if (productosArrayStr && productosArrayStr.length > 0) {
       // El array productosArray existe en el sessionStorage y puedes trabajar con él aquí
 
         productosArray = JSON.parse(sessionStorage.getItem("productosArray"));    
-    
-    // Numero random para las referencias
-    
-    function generarNumeroAleatorio() {
-        return Math.floor(Math.random() * 1000) + 1;
-      }
-    
+            
     // Función para crear una tabla HTML a partir de un objeto
     function crearTabla(objeto, index) {
-        const numeroAleatorio = generarNumeroAleatorio();
         let tablaHTML =
           `<table class="tablaProducto" id="tablaProducto">
               <thead>
@@ -35,7 +28,7 @@ if (productosArrayStr && productosArrayStr.length > 0) {
                     </th>
                       <th class="columna2">
                           <div class="thValor">
-                              <p class="celdaValor">Ref-${numeroAleatorio}</p>
+                              <p class="celdaValor">Ref-${index+100}</p>
                               <img class="imgPuntos" src="/img/icons8-puntos-25.png" alt="">
                               <div class="oculto menuOpciones">
                                   <p id="menuOpcionesEditar">Generar PDF</p>
@@ -125,8 +118,9 @@ if (productosArrayStr && productosArrayStr.length > 0) {
         });
     });
     
-    
+     
     //////////////////////////////////// OPCION EXPORTAR A PDF ////////////////////
+    // NO FUNCIONA
     
     // Función para exportar el contenido de la tabla seleccionada a un PDF
     function exportarAPDF(indiceTabla) {
