@@ -443,7 +443,7 @@ añadirProducto.addEventListener("click",function(){
     
     ////////////////////////// Opciones Manualmente ///////////////////////////////////////
     
-    // Agrega un evento 'change' al select para capturar los cambios manuales
+    // se agrega un evento 'change' al select para capturar los cambios manuales
     document.querySelector("#colorProducto").addEventListener("change", (event) => {
         const newIndex = event.target.value - 1; // Restamos 1 para obtener el índice correcto
         if (newIndex !== currentIndex) {
@@ -488,6 +488,7 @@ añadirProducto.addEventListener("click",function(){
     
     userInput.addEventListener("input", () => {
         userInputNumber = parseInt(userInput.value, 10);
+        calcularPrecio()
     });
     
     //////////////////////////   Valores /////////////////////////////////
@@ -567,11 +568,11 @@ añadirProducto.addEventListener("click",function(){
         productoAñadidoCompleto = {
             "Fecha de cotizacion" : "",
             "Nombre" : document.querySelector(".h2NombreProducto").textContent,
-            "Valor unitario" : precioNeto,
+            "Valor unitario" : formatearNumero(precioNeto),
             "Cantidad" : userInputNumber,
-            "Descuento" : descuentoTotal,
+            "Descuento" : formatearNumero(descuentoTotal),
             "Tipo de pedido" : opcionTipoDePedido,
-            "Totales" : PrecioTotal,
+            "Valor Total" : formatearNumero(PrecioTotal),
             "Color" : productoSeleccionado.color[seleccionColor - 1],
             "Observaciones" : observaciones,
             "Fecha de Entrega" : fechaEntrega,
@@ -625,44 +626,7 @@ añadirProducto.addEventListener("click",function(){
         
         
     });
-    
-    /////////////////  OPCIONES TABLA   ////////////////
-
-    const imgPuntos = document.querySelector(".imgPuntos");
-    const menuOpciones = document.querySelector(".menuOpciones");
-    
-    imgPuntos.addEventListener("click",function(){
-        menuOpciones.classList.toggle("oculto");
-    })
-    
-    document.addEventListener("click", function (event) {
-        const target = event.target;
-        if (!menuOpciones.contains(target) && target !== imgPuntos) {
-            menuOpciones.classList.add("oculto");
-        }
-    });
-    
-    
-    /////////////////// OPCION EDITAR ////////////////////////
-    
-    const menuOpcionesEditar = document.querySelector("#menuOpcionesEditar");
-    
-    menuOpcionesEditar.addEventListener("click",function(){
-        paginaNuevaCotizacion.classList.add("oculto");
-        añadirProductos.classList.add("oculto");
-        detalleProductos.classList.remove("oculto");
-    })
-    
-    /////////////////// OPCION ELIMINAR "NO FUNCIONA :C" ////////////////////////
-    
-    // const menuOpcionesEliminar = document.querySelector("#menuOpcionesEliminar");
-
-    // const tablaProducto = document.querySelector("#tablaProducto");
-    // const tbody = document.querySelector("#tablaProducto tbody");
-    // menuOpcionesEliminar.addEventListener("click", function(){
-    //     // alert("producto eliminado")
-    // })
-    
+        
     ////////////////////   fin detalle producos /////////////////////////
     }
 ///// Fin if ////////////
@@ -672,6 +636,43 @@ añadirProducto.addEventListener("click",function(){
 ////////////////////// fin menu productos//////////////////////
 
 })
+
+/////////////////  OPCIONES TABLA   ////////////////
+
+const imgPuntos = document.querySelector(".imgPuntos");
+const menuOpciones = document.querySelector(".menuOpciones");
+
+imgPuntos.addEventListener("click",function(){
+    menuOpciones.classList.toggle("oculto");
+})
+
+document.addEventListener("click", function (event) {
+    const target = event.target;
+    if (!menuOpciones.contains(target) && target !== imgPuntos) {
+        menuOpciones.classList.add("oculto");
+    }
+});
+
+
+/////////////////// OPCION EDITAR ////////////////////////
+
+const menuOpcionesEditar = document.querySelector("#menuOpcionesEditar");
+
+menuOpcionesEditar.addEventListener("click",function(){
+    paginaNuevaCotizacion.classList.add("oculto");
+    añadirProductos.classList.add("oculto");
+    detalleProductos.classList.remove("oculto");
+})
+
+/////////////////// OPCION ELIMINAR "NO FUNCIONA :C" ////////////////////////
+
+// const menuOpcionesEliminar = document.querySelector("#menuOpcionesEliminar");
+
+// const tablaProducto = document.querySelector("#tablaProducto");
+// const tbody = document.querySelector("#tablaProducto tbody");
+// menuOpcionesEliminar.addEventListener("click", function(){
+//     // alert("producto eliminado")
+// })
 
 
 ////////////////////////////////////////////////////////////////////////////
