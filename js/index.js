@@ -1,5 +1,4 @@
 window.addEventListener("load",function(){
-
 const productosArrayStr = sessionStorage.getItem('productosArray');
 
 // Comprobar si productosArrayStr es una cadena no vacía
@@ -31,8 +30,8 @@ if (productosArrayStr && productosArrayStr.length > 0) {
                               <p class="celdaValor">Ref-${index+100}</p>
                               <img class="imgPuntos" src="/img/icons8-puntos-25.png" alt="">
                               <div class="oculto menuOpciones">
-                                  <p id="menuOpcionesEditar">Generar PDF</p>
-                                  <p id="menuOpcionesEliminar">Opcion 2</p>
+                                  <p>Opcion 1</p>
+                                  <p>Opcion 2</p>
                                   <p>Opcion 3</p>
                                   <p>Opcion 4</p>
                               </div>
@@ -118,43 +117,7 @@ if (productosArrayStr && productosArrayStr.length > 0) {
         });
     });
     
-     
-    //////////////////////////////////// OPCION EXPORTAR A PDF ////////////////////
-    // NO FUNCIONA
     
-    // Función para exportar el contenido de la tabla seleccionada a un PDF
-    function exportarAPDF(indiceTabla) {
-        const pdf = new jsPDF();
-        const tablaFuente = tablaProductoList[indiceTabla];
-        const tituloTablaFuente = tablaFuente.querySelector("th").innerText.trim();
-        const filasTablaFuente = tablaFuente.querySelectorAll("tr");
-    
-        let yOffset = 10;
-        pdf.text(20, yOffset, `Tabla: ${tituloTablaFuente}`);
-        yOffset += 10;
-    
-        filasTablaFuente.forEach(fila => {
-            const datosFila = fila.querySelectorAll("td");
-            let xOffset = 20;
-            datosFila.forEach(celda => {
-                pdf.text(xOffset, yOffset, celda.innerText.trim());
-                xOffset += 40;
-            });
-            yOffset += 10;
-        });
-    
-        pdf.save(`tabla_${indiceTabla + 1}.pdf`);
-    }
-    
-    // Asociar el evento de clic a cada opción "Editar" en el menú
-    const opcionesEditar = document.querySelectorAll("#menuOpcionesEditar");
-    opcionesEditar.forEach((opcion, indice) => {
-        opcion.addEventListener("click", function () {
-            exportarAPDF(indice);
-        });
-    });
-    
-    //   console.log(productosArray);
     } else {
       console.log('El valor almacenado en la clave "productosArray" no es un array.');
     }

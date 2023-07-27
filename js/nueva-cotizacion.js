@@ -549,15 +549,16 @@ añadirProducto.addEventListener("click",function(){
         }else if(observaciones === ""){
             alert("Deje una observación")
         }else{
+        
             const valorSubTotal = precioNeto*userInputNumber;
-        const descuentoTotal = valorSubTotal*porcetajeDescuento;
-        const PrecioTotal = valorSubTotal-descuentoTotal;
+            const descuentoTotal = valorSubTotal*porcetajeDescuento;
+            const PrecioTotal = valorSubTotal-descuentoTotal;
     
         productoAñadido = {
-            "nombre" : document.querySelector(".h2NombreProducto").textContent,
-            "valor unitario" : formatearNumero(precioNeto),
-            "cantidad" : userInputNumber,
-            "descuento" : formatearNumero(descuentoTotal),
+            "Nombre" : document.querySelector(".h2NombreProducto").textContent,
+            "Valor unitario" : formatearNumero(precioNeto),
+            "Cantidad" : userInputNumber,
+            "Descuento" : formatearNumero(descuentoTotal),
             "Tipo de pedido" : opcionTipoDePedido,
             "Totales" : formatearNumero(PrecioTotal),
             "Color" : productoSeleccionado.color[seleccionColor - 1]
@@ -565,38 +566,45 @@ añadirProducto.addEventListener("click",function(){
     
         productoAñadidoCompleto = {
             "Fecha de cotizacion" : "",
-            "nombre" : document.querySelector(".h2NombreProducto").textContent,
-            "valor unitario" : precioNeto,
-            "cantidad" : userInputNumber,
-            "descuento" : descuentoTotal,
+            "Nombre" : document.querySelector(".h2NombreProducto").textContent,
+            "Valor unitario" : precioNeto,
+            "Cantidad" : userInputNumber,
+            "Descuento" : descuentoTotal,
             "Tipo de pedido" : opcionTipoDePedido,
             "Totales" : PrecioTotal,
             "Color" : productoSeleccionado.color[seleccionColor - 1],
             "Observaciones" : observaciones,
             "Fecha de Entrega" : fechaEntrega,
+            "Tercero" : "",
+            "Email" : "",
+            "Forma de pago" : "",
+            "Lista de precios" : ""
         }
     
         pObservaciones.innerHTML = observaciones;
         
     
     // Función para agregar una fila a la tabla
-    function agregarFila(atributo, valor) {
+    function agregarFila(atributo, valor, index) {
         const fila = `
             <tr>
                 <td>${atributo}</td>
-                <td>${valor}</td>
+                <td id="valorAtributo${index}">${valor}</td>
             </tr>
         `;
         tbody.innerHTML += fila;
     }
     
+    let index = 1;
     // Iterar sobre las propiedades del objeto productoAñadido
     for (const atributo in productoAñadido) {
-        agregarFila(atributo, productoAñadido[atributo]);
+        agregarFila(atributo, productoAñadido[atributo], index);
+        index++;
     }
 
     /////////////////////////////////////
-
+    let valorAtributo5 = document.querySelector("#valorAtributo5");
+    
     const subTotal = document.querySelector("#subTotal");
     const totalDescuento = document.querySelector("#totalDescuento");
     const totalPagar = document.querySelector("#totalPagar");
@@ -617,7 +625,7 @@ añadirProducto.addEventListener("click",function(){
         
         
     });
-
+    
     /////////////////  OPCIONES TABLA   ////////////////
 
     const imgPuntos = document.querySelector(".imgPuntos");
@@ -662,7 +670,19 @@ añadirProducto.addEventListener("click",function(){
     alert("Escoja un tipo de Factura")
 }
 ////////////////////// fin menu productos//////////////////////
+
 })
+
+
+////////////////////////////////////////////////////////////////////////////
+
+    const tipoDePedido = document.querySelector("#tipoDePedido");
+
+    tipoDePedido.addEventListener("change" , function(){
+
+    valorAtributo5.textContent  = tipoDePedido.value;
+
+    })
 
 ////////////////////////////////// Guardar cotizacion /////////////////////////
 
@@ -677,7 +697,7 @@ imgGuardarEncabezado.addEventListener("click" , function(){
 
     if(confirmacion){
 
-        const tercero = document.querySelector("#tercero");
+    const tercero = document.querySelector("#tercero");
     const fechaNuevaCotizacion = document.querySelector("#fechaNuevaCotizacion");
     const email = document.querySelector("#email");
     const formaDePago = document.querySelector("#formaDePago");
@@ -713,20 +733,19 @@ if (!validacion1) {
 
 if(!validacion2){
 
-
-    ///// Aca se toma el objeto y se realiza el pedido //////////////////
+///// Aca se toma el objeto y se realiza el pedido //////////////////
     
-    // Paso 1: Obtén el array actual del sessionStorage (si existe) o crea uno nuevo
+// Paso 1: Obtén el array actual del sessionStorage (si existe) o crea uno nuevo
 let productosArray = JSON.parse(sessionStorage.getItem("productosArray")) || [];
 
 // Paso 2: Crea un nuevo objeto que deseas agregar al array
 
-productoAñadidoCompleto.tercero = tercero.value;
+productoAñadidoCompleto["Tercero"] = tercero.value;
 productoAñadidoCompleto["Fecha de cotizacion"] = fechaNuevaCotizacion.value;
-productoAñadidoCompleto.email = email.value;
-productoAñadidoCompleto.formaDePago = formaDePago.value;
-productoAñadidoCompleto.listaDePrecios = listaDePrecios.value;
-productoAñadidoCompleto.tipoDePedido = tipoDePedido.value;
+productoAñadidoCompleto["Email"] = email.value;
+productoAñadidoCompleto["Forma de pago"] = formaDePago.value;
+productoAñadidoCompleto["Lista de precios"] = listaDePrecios.value;
+productoAñadidoCompleto["Tipo de pedido"] = tipoDePedido.value;
 
 // console.log(productoAñadidoCompleto);
 
