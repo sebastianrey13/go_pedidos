@@ -472,8 +472,9 @@ añadirProducto.addEventListener("click",function(){
     botonMas.addEventListener("click", ()=>{
         userInputNumber++;
         userInput.value = userInputNumber;
-        console.log(userInputNumber);
+        console.log(userInputNumber); 
         calcularPrecio();
+  
     });
     
     botonMenos.addEventListener("click", ()=>{
