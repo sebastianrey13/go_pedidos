@@ -8,8 +8,8 @@
 }
 
 /*@media (max-width:414px){*/
-    
-.encabezado{
+
+.encabezado {
     position: fixed;
     width: 100%;
     height: 50px;
@@ -23,10 +23,11 @@
     z-index: 1;
 }
 
-#imgCajaEncabezado{
+#imgCajaEncabezado {
     width: 45px;
 }
-.nueva_cotizacion{
+
+.nueva_cotizacion {
     position: fixed;
     bottom: 85px;
     right: 20px;
@@ -35,7 +36,7 @@
 
 /* -------------------Tabla --------------------------- */
 
-.main{
+.main {
     padding-top: 40px;
     padding-bottom: 60px;
     display: flex;
@@ -43,12 +44,13 @@
     justify-content: center;
 }
 
-#contenedorTablas{
+#contenedorTablas {
     width: 90%;
 }
 
 .tablaProducto {
-    border-collapse: collapse; /* Combina los bordes de las celdas */
+    border-collapse: collapse;
+    /* Combina los bordes de las celdas */
     width: 100%;
     margin: 20px 0px;
 }
@@ -56,20 +58,24 @@
 .tablaProducto th,
 .tablaProducto td {
     border: 1px solid #ccc;
-    padding: 8px; /* Espacio interno para el contenido de las celdas */
-    text-align: left; /* Alinea el texto a la izquierda */
+    padding: 8px;
+    /* Espacio interno para el contenido de las celdas */
+    text-align: left;
+    /* Alinea el texto a la izquierda */
 }
 
 .tablaProducto th {
-    background-color: #ebffe3; /* Agrega un fondo de color a las celdas del encabezado */
+    background-color: #ebffe3;
+    /* Agrega un fondo de color a las celdas del encabezado */
     text-align: center;
 }
 
 .tablaProducto tbody tr:nth-child(odd) {
-    background-color: #f9f9f9; /* Color de fondo para las filas impares */
+    background-color: #f9f9f9;
+    /* Color de fondo para las filas impares */
 }
 
-.thValor{
+.thValor {
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: center;
@@ -77,15 +83,15 @@
     height: 18px;
 }
 
-.columna1{
+.columna1 {
     width: 40%;
 }
 
-.columna2{
+.columna2 {
     width: 60%;
 }
 
-.imgDesplegar{
+.imgDesplegar {
     position: absolute;
     justify-self: start;
     cursor: pointer;
@@ -94,9 +100,9 @@
 
 .imgDesplegar.rotar {
     transform: rotate(90deg);
-  }
+}
 
-.imgPuntos{
+.imgPuntos {
     position: absolute;
     justify-self: end;
     cursor: pointer;
@@ -114,8 +120,8 @@
     right: 25px;
     margin-top: 105px;
     cursor: pointer;
-  }
-  
+}
+
 .menuOpciones p {
     cursor: pointer;
     text-align: start;
@@ -126,12 +132,12 @@
 
 /* footer */
 
-.footer{
+.footer {
     position: fixed;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content:center;
+    justify-content: center;
     width: 100%;
     height: 50px;
     bottom: 0px;
@@ -148,8 +154,8 @@
     margin-bottom: 140px;
     width: 200px;
     cursor: pointer;
-  }
-  
+}
+
 .menuFooter p {
     margin: 10px;
     cursor: pointer;
@@ -159,24 +165,24 @@
 }
 
 
-.oculto{
+.oculto {
     display: none;
 }
 
 /*}*/
 
 
-@media (min-width:501px){
-    .contenido{
+@media (min-width:501px) {
+    .contenido {
         display: none;
     }
 
-    .oculto{
+    .oculto {
         display: flex;
     }
-    
-    .aviso{
+
+    .aviso {
         margin: 100px;
         text-align: center;
-}
+    }
 }

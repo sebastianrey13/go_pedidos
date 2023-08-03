@@ -9,7 +9,7 @@
 
 /*@media (max-width:414px){*/
 
-.encabezado{
+.encabezado {
     position: fixed;
     width: 100%;
     height: 50px;
@@ -25,7 +25,7 @@
 
 /* -------------------------------------    Form   -------------------------------------- */
 
-.main{
+.main {
     padding-top: 65px;
     padding-bottom: 65px;
 }
@@ -36,7 +36,7 @@ form {
     background-color: #ffffff;
 }
 
-.asterisco{
+.asterisco {
     color: #ff0000;
 }
 
@@ -62,8 +62,10 @@ input[type="date"] {
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    appearance: none; /* Quitar estilo por defecto en otros navegadores */
-    -webkit-appearance: none; /* Quitar estilo por defecto en iOS */
+    appearance: none;
+    /* Quitar estilo por defecto en otros navegadores */
+    -webkit-appearance: none;
+    /* Quitar estilo por defecto en iOS */
 }
 
 input[type="tercero"] {
@@ -73,7 +75,8 @@ input[type="tercero"] {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-.pObservaciones{
+
+.pObservaciones {
     width: 100%;
     word-wrap: break-word;
     overflow-wrap: break-word;
@@ -86,7 +89,7 @@ input[type="tercero"] {
 }
 
 
-.imgBuscarTercero{
+.imgBuscarTercero {
     position: absolute;
     padding-left: 7px;
 }
@@ -96,7 +99,7 @@ select option {
     color: #333;
 }
 
-.añadirProductos{
+.añadirProductos {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -115,24 +118,24 @@ select option {
     text-align: center;
 }
 
-.buttonAñadir{
+.buttonAñadir {
     margin-top: 20px;
     margin-bottom: 70px;
 }
 
 /* -------------------------------------    Terceros   -------------------------------------- */
 
-.nueva_cotizacion{
+.nueva_cotizacion {
     position: fixed;
     bottom: 85px;
     right: 20px;
 }
 
-.contenedor{
+.contenedor {
     padding-top: 65px;
 }
 
-.seleccion{
+.seleccion {
     padding: 15px;
     display: grid;
     grid-template-columns: 25% 60% 10%;
@@ -142,29 +145,29 @@ select option {
     align-items: center;
 }
 
-select:focus{
-    border: 0px solid #8add8c; 
-    box-shadow: 0 0 5px #8add8c; 
+select:focus {
+    border: 0px solid #8add8c;
+    box-shadow: 0 0 5px #8add8c;
 }
 
-.imageAvatar{
+.imageAvatar {
     grid-column: 1/2;
     grid-row: 1/3;
 }
 
-.imageCheck{
+.imageCheck {
     grid-column: 3/4;
     grid-row: 1/3;
     padding-top: 9px;
 }
 
-.imageCar{
+.imageCar {
     grid-column: 3/4;
     grid-row: 1/3;
     padding-top: 9px;
 }
 
-.pNit{
+.pNit {
     color: #b1b1b1;
 }
 
@@ -179,24 +182,25 @@ input[type="inputTerceros"] {
 }
 
 input:focus {
-    outline: none; /* Quitamos el borde por defecto que aparece en algunos navegadores */
-    border: 0px solid #8add8c; 
-    box-shadow: 0 0 5px #8add8c; 
+    outline: none;
+    /* Quitamos el borde por defecto que aparece en algunos navegadores */
+    border: 0px solid #8add8c;
+    box-shadow: 0 0 5px #8add8c;
 }
 
 
 /* -------------------------------------    Productos   -------------------------------------- */
 
-.encabezadoNombreProductos{
+.encabezadoNombreProductos {
     justify-content: center
 }
 
-.encabezadoNombreProductos img{
+.encabezadoNombreProductos img {
     position: absolute;
     left: 20px;
 }
 
-.productos{
+.productos {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -204,23 +208,23 @@ input:focus {
     margin-top: 30px;
 }
 
-.productos_nombre{
+.productos_nombre {
     margin: 10px;
 }
 
-.observacionesProducto{
+.observacionesProducto {
     display: flex;
     flex-direction: column;
     margin: 20px;
     align-items: center;
 }
 
-.observacionesProducto p{
+.observacionesProducto p {
     margin-bottom: 20px;
     font-size: 20px;
 }
 
-.observacionesProducto textarea{
+.observacionesProducto textarea {
     background-color: #f2fdf2e0;
     padding: 10px;
     border: 1px solid #8add8c;
@@ -232,11 +236,11 @@ input:focus {
     border-radius: 10px;
     border: 1px solid #61dd65;
     box-shadow: 0 0 5px #5fd67d;
-    
+
 
 }
 
-.slider{
+.slider {
     width: 300px;
     /* height: 450px; */
     /* position: relative; */
@@ -245,7 +249,7 @@ input:focus {
     /* scroll-snap-type: x mandatory; */
 }
 
-.slider img{
+.slider img {
     /* width: 100%; */
     /* left: 0; */
     /* position: sticky; */
@@ -254,11 +258,11 @@ input:focus {
     /* scroll-snap-align: center; */
 }
 
-.sliderBoton{
+.sliderBoton {
     margin-top: -30px;
 }
 
-.sliderBoton ul{
+.sliderBoton ul {
     display: flex;
 }
 
@@ -295,13 +299,13 @@ input[type="inputProductos"] {
     left: -15px;
 } */
 
-.adelante{
+.adelante {
     position: relative;
     top: -165px;
     left: 285px;
 }
 
-.atras{
+.atras {
     position: relative;
     top: -165px;
     left: -50px;
@@ -309,7 +313,7 @@ input[type="inputProductos"] {
 
 /* ---------------------- */
 
-.boton{
+.boton {
     width: 10px;
     height: 10px;
     border: 2px solid #61DD65;
@@ -317,11 +321,11 @@ input[type="inputProductos"] {
     margin: 2px;
 }
 
-.botonRelleno{
+.botonRelleno {
     background-color: #61DD65;
 }
 
-.colorProducto{
+.colorProducto {
     width: 200px;
     font-weight: bold;
 }
@@ -336,12 +340,12 @@ input[type="inputProductos"] {
     align-items: end;
 } */
 
-.precios{
+.precios {
     display: flex;
     justify-content: space-around;
 }
 
-.precioConDescuento{
+.precioConDescuento {
     font-size: 1.7em;
     font-weight: 700;
     text-align: center;
@@ -360,11 +364,11 @@ input[type="inputProductos"] {
     text-decoration: line-through;
 }
 
-.cantidad{
+.cantidad {
     margin: 20px 0px;
     width: 150px;
     display: flex;
-    align-items: center ;
+    align-items: center;
     justify-content: space-between;
 
 }
@@ -378,7 +382,7 @@ input[type="precio"] {
     text-align: center;
 }
 
-.mas_menos{
+.mas_menos {
     width: 20px;
     height: 20px;
     border: solid 1px #61DD65;
@@ -388,7 +392,7 @@ input[type="precio"] {
 /* -------------------------------------    Valor a pagar   ----------------------------------- */
 
 
-.valores{
+.valores {
     display: grid;
     grid-template-columns: 70% 30%;
     grid-template-rows: 1fr 1fr 1fr;
@@ -396,14 +400,14 @@ input[type="precio"] {
     padding: 10px
 }
 
-.valores p{
-    font-size: 16px; 
+.valores p {
+    font-size: 16px;
     color: #bbbbbb;
     border-bottom: 1px solid #61DD65;
-    padding-bottom: 5px; 
+    padding-bottom: 5px;
 }
 
-.valores .totalAPagar{
+.valores .totalAPagar {
     font-size: 20px;
     font-weight: bold;
     color: #000000;
@@ -412,7 +416,8 @@ input[type="precio"] {
 /* -------------------Tabla --------------------------- */
 
 .tablaProducto {
-    border-collapse: collapse; /* Combina los bordes de las celdas */
+    border-collapse: collapse;
+    /* Combina los bordes de las celdas */
     width: 100%;
     margin: 20px 0px;
 }
@@ -420,20 +425,24 @@ input[type="precio"] {
 .tablaProducto th,
 .tablaProducto td {
     border: 1px solid #ccc;
-    padding: 8px; /* Espacio interno para el contenido de las celdas */
-    text-align: left; /* Alinea el texto a la izquierda */
+    padding: 8px;
+    /* Espacio interno para el contenido de las celdas */
+    text-align: left;
+    /* Alinea el texto a la izquierda */
 }
 
 .tablaProducto th {
-    background-color: #ebffe3; /* Agrega un fondo de color a las celdas del encabezado */
+    background-color: #ebffe3;
+    /* Agrega un fondo de color a las celdas del encabezado */
     text-align: center;
 }
 
 .tablaProducto tbody tr:nth-child(odd) {
-    background-color: #f9f9f9; /* Color de fondo para las filas impares */
+    background-color: #f9f9f9;
+    /* Color de fondo para las filas impares */
 }
 
-.thValor{
+.thValor {
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: center;
@@ -441,7 +450,7 @@ input[type="precio"] {
     height: 18px;
 }
 
-.imgPuntos{
+.imgPuntos {
     position: absolute;
     justify-self: end;
     cursor: pointer;
@@ -459,24 +468,24 @@ input[type="precio"] {
     right: 25px;
     margin-top: 105px;
     cursor: pointer;
-  }
-  
-  .menuOpciones p {
+}
+
+.menuOpciones p {
     cursor: pointer;
     text-align: start;
     font-size: 15px;
     margin-bottom: 10px;
-  }
+}
 
 
 /* -------------------------------------      footer     -------------------------------------- */
 
-.footer{
+.footer {
     position: fixed;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content:center;
+    justify-content: center;
     width: 100%;
     height: 50px;
     bottom: 0px;
@@ -484,23 +493,23 @@ input[type="precio"] {
     /* padding-right: 20px; */
 }
 
-.oculto{
+.oculto {
     display: none;
 }
 
 /*}*/
 
-@media (min-width:501px){
+@media (min-width:501px) {
 
-    .contenido{
+    .contenido {
         display: none;
     }
 
-    .oculto{
+    .oculto {
         display: flex;
     }
-    
-    .aviso{
+
+    .aviso {
         margin: 100px;
         text-align: center;
     }

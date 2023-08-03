@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,137 +8,142 @@
     <script type="text/javascript" src="/js/nueva-cotizacion.js"></script>
     <title>GoPedidos</title>
 </head>
+
 <body>
     <h2 class="oculto aviso">La pagina solo es visible con un ancho de 500 pixeles o menos</h2>
     <div class="contenido">
-    <div id="paginaNuevaCotizacion">
-    <header>
-        <div class="encabezado">
-            <a href="/index.html"><img src="/img/regresar_30.png" alt="volver atras"></a>
-            <h2>Nueva cotización</h2>
-            <img id="imgGuardarEncabezado" src="/img/icons8-guardar-50.png" alt="guardar">
-        </div>
-    </header>
+        <div id="paginaNuevaCotizacion">
+            <header>
+                <div class="encabezado">
+                    <a href="/index.html"><img src="/img/regresar_30.png" alt="volver atras"></a>
+                    <h2>Nueva cotización</h2>
+                    <img id="imgGuardarEncabezado" src="/img/icons8-guardar-50.png" alt="guardar">
+                </div>
+            </header>
 
-    <main>
-        <div class="main">
-            <div>
-                <form id="nuevaCotizacion">
-                    <div>   
-                        <label for="tercero">Tercero:<span class="asterisco">*</span></label>
-                        <input type="tercero" id="tercero" placeholder="" required disabled></input>
-                        <img id="imgBuscarTercero" class="imgBuscarTercero" src="/img/icons8-lupa-ios-16-32.png" alt="">
-                    </div>
-
+            <main>
+                <div class="main">
                     <div>
-                        <label for="fechaNuevaCotizacion">Fecha actual:</label>
-                        <input type="date" id="fechaNuevaCotizacion" name="fechaNuevaCotizacion" value="" disabled>
+                        <form id="nuevaCotizacion">
+                            <div>
+                                <label for="tercero">Tercero:<span class="asterisco">*</span></label>
+                                <input type="tercero" id="tercero" placeholder="" required disabled></input>
+                                <img id="imgBuscarTercero" class="imgBuscarTercero" src="/img/icons8-lupa-ios-16-32.png"
+                                    alt="">
+                            </div>
+
+                            <div>
+                                <label for="fechaNuevaCotizacion">Fecha actual:</label>
+                                <input type="date" id="fechaNuevaCotizacion" name="fechaNuevaCotizacion" value=""
+                                    disabled>
+                            </div>
+
+                            <div>
+                                <label for="Email">Email:<span class="asterisco">*</span></label>
+                                <input type="email" id="email" placeholder="Ingrese su email" required></input>
+                            </div>
+
+                            <div>
+                                <label for="formaDePago">Forma de pago:<span class="asterisco">*</span></label>
+                                <select name="formaDePago" id="formaDePago">
+                                    <option value="">Seleccione</option>
+                                    <option value="Efectivo">Efectivo</option>
+                                    <option value="Credito 15 dias">credito 15 dias</option>
+                                    <option value="Credito 30 dias">credito 30 dias</option>
+                                    <option value="Pago en linea PSE">Pago en linea PSE</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="listaDePrecios">Lista de precios:<span class="asterisco">*</span></label>
+                                <select name="listaDePrecios" id="listaDePrecios">
+                                    <option value="">Seleccione</option>
+                                    <option value="Lista de precios - Medellin">Lista de precios - Medellin</option>
+                                    <option value="Lista de precios - Bogota">Lista de precios - Bogota</option>
+                                    <option value="Lista de precios - Cali">Lista de precios - Cali</option>
+                                    <option value="Lista de precios - Bucaramanga">Lista de precios - Bucaramanga
+                                    </option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="tipoDePedido">Tipo de pedido:<span class="asterisco">*</span></label>
+                                <select name="tipoDePedido" id="tipoDePedido">
+                                    <option value="">Seleccione</option>
+                                    <option value="Factura">Factura</option>
+                                    <option value="Remision">Remision</option>
+                                </select>
+                            </div>
+
+                            <div class="añadirProductos">
+                                <img src="/img/icons8-caja-64.png" alt="">
+                                <p id="añadirProducto" class="button">Añadir producto</p>
+                            </div>
+
+                            <table class="oculto tablaProducto" id="tablaProducto">
+                                <thead>
+                                    <tr>
+                                        <th>Atributo</th>
+                                        <th>
+                                            <div class="thValor">
+                                                <p class="celdaValor">Valor</p>
+                                                <img class="imgPuntos" src="/img/icons8-puntos-25.png" alt="">
+                                                <div class="oculto menuOpciones">
+                                                    <p id="menuOpcionesEditar">Editar</p>
+                                                    <p id="menuOpcionesEliminar">Opcion 2</p>
+                                                    <p>Opcion 3</p>
+                                                    <p>Opcion 4</p>
+                                                </div>
+                                            </div>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Aquí se generarán las filas dinámicamente -->
+                                </tbody>
+                            </table>
+
+                            <div>
+                                <label for="observaciones">Observaciones:</label>
+                                <p class="pObservaciones" disabled></p>
+                            </div>
+
+
+                            <div class="valores">
+                                <p>Sub Total</p>
+                                <p>$<span id="subTotal">0</span></p>
+                                <p>Total Descuento</p>
+                                <p>$<span id="totalDescuento">0</span></p>
+                                <p class="totalAPagar">Total Pagar</p>
+                                <p class="totalAPagar">$<span id="totalPagar">0</span></p>
+                            </div>
+
+                        </form>
                     </div>
+                </div>
+            </main>
 
-                    <div>
-                        <label for="Email">Email:<span class="asterisco">*</span></label>
-                        <input type="email" id="email" placeholder="Ingrese su email" required></input>
-                    </div>
-
-                    <div>
-                        <label for="formaDePago">Forma de pago:<span class="asterisco">*</span></label>
-                        <select name="formaDePago" id="formaDePago">
-                            <option value="">Seleccione</option>
-                            <option value="Efectivo">Efectivo</option>
-                            <option value="Credito 15 dias">credito 15 dias</option>
-                            <option value="Credito 30 dias">credito 30 dias</option>
-                            <option value="Pago en linea PSE">Pago en linea PSE</option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <label for="listaDePrecios">Lista de precios:<span class="asterisco">*</span></label>
-                        <select name="listaDePrecios" id="listaDePrecios">
-                            <option value="">Seleccione</option>
-                            <option value="Lista de precios - Medellin">Lista de precios - Medellin</option>
-                            <option value="Lista de precios - Bogota">Lista de precios - Bogota</option>
-                            <option value="Lista de precios - Cali">Lista de precios - Cali</option>
-                            <option value="Lista de precios - Bucaramanga">Lista de precios - Bucaramanga</option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <label for="tipoDePedido">Tipo de pedido:<span class="asterisco">*</span></label>
-                        <select name="tipoDePedido" id="tipoDePedido">
-                            <option value="">Seleccione</option>
-                            <option value="Factura">Factura</option>
-                            <option value="Remision">Remision</option>
-                        </select>
-                    </div>
-                    
-                    <div class="añadirProductos">
-                        <img src="/img/icons8-caja-64.png" alt="">
-                        <p id="añadirProducto" class="button">Añadir producto</p>
-                    </div>
-
-                    <table class="oculto tablaProducto" id="tablaProducto">
-                        <thead>
-                            <tr>
-                                <th>Atributo</th>
-                                <th>
-                                    <div class="thValor">
-                                    <p class="celdaValor">Valor</p>
-                                    <img class="imgPuntos" src="/img/icons8-puntos-25.png" alt="">
-                                    <div class="oculto menuOpciones">
-                                        <p id="menuOpcionesEditar">Editar</p>
-                                        <p id="menuOpcionesEliminar">Opcion 2</p>
-                                        <p>Opcion 3</p>
-                                        <p>Opcion 4</p>
-                                    </div>
-                                    </div>
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        <!-- Aquí se generarán las filas dinámicamente -->
-                        </tbody>
-                    </table>
-
-                    <div>
-                        <label for="observaciones">Observaciones:</label>
-                        <p class="pObservaciones" disabled></p>
-                    </div>
-
-
-                    <div class="valores">
-                        <p>Sub Total</p>
-                        <p>$<span id="subTotal">0</span></p>
-                        <p>Total Descuento</p>
-                        <p>$<span id="totalDescuento">0</span></p>
-                        <p class="totalAPagar">Total Pagar</p>
-                        <p class="totalAPagar">$<span id="totalPagar">0</span></p>
-                    </div>
-
-                </form>
-            </div>   
-        </div>
-    </main>
-
-    <!-- <footer>
+            <!-- <footer>
         <div class="footer">
             <img class="menu" src="/img/menu_45.png" alt="menu">
         </div>
     </footer> -->
 
-</div>
+        </div>
 
 
-<div class="oculto" id="añadirTerceros">  
-</div>
+        <div class="oculto" id="añadirTerceros">
+        </div>
 
-<div class="oculto" id="añadirProductos">  
-</div>
+        <div class="oculto" id="añadirProductos">
+        </div>
 
-<div  class="oculto" id="detalleProductos">  
-</div>
+        <div class="oculto" id="detalleProductos">
+        </div>
 
 
 
-</div>
+    </div>
 </body>
+
 </html>
